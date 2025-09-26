@@ -1,0 +1,33 @@
+{
+  "short_name": "Okay Weather",
+  "name": "Okay Weather",
+  "description": "Weather forecast information",
+  "icons": [
+    {
+      "src": "./icons/appicon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/appicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://roberrini.com/apps/okayweather/index.html",
+  "background_color": "#F6F7F8",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#101B23",
+
+}
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can install the PWA
+  showInstallPromotion();
+});

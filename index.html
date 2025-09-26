@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css"/>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;600;900&display=swap');</style>
+    <link rel='icon' href='./icons/OkayWeatherIcon.png' type='image/x-icon' >
+    <meta name="viewport" content="width=device-width, user-scalable=NO" />
+
+    <link rel="apple-touch-icon" href="./icons/appicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Okay Weather</title>
+    <meta name="description" content="Okay weather is a simple weather application made to deliver only the right information at the right time and when you need it. Developped by Jeremie ROBERRINI NEVEU, UX designer">
+    <meta name="keywords" content="weather, weather app">
+    <meta name="author" content="Jeremie ROBERRINI">
+    
+    
+    
+
+</head>
+<body>
+    <main>
+        <div class="today">
+            <section class="title">
+                <img src="./icons/titlemark.svg" alt="chevron" class="title-mark">
+                <h1 id="city">Location, today</h1>
+            </section>
+            <section class="card day-card">
+                <h2>now</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="now-img">
+                        <h3 id="now-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="now-rain-ico">
+                        </section>
+                        <p id="now-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="now-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="now-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card upcoming-card" id="upcoming-card">
+                <h2 class="upcoming-title">next 5 hours</h2>
+                <section class="upcoming-list">
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H1">00:00</p>
+                        <img src="./icons/loading.svg" id="H1Icon">
+                        <p class="upcoming-temp" id="H1Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H1RainIcon">
+                            <p id="H1Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card grey-card">
+                        <p class="upcoming-hour" id="H2">00:00</p>
+                        <img src="./icons/loading.svg" id="H2Icon">
+                        <p class="upcoming-temp" id="H2Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H2RainIcon">
+                            <p id="H2Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H3">00:00</p>
+                        <img src="./icons/loading.svg" id="H3Icon">
+                        <p class="upcoming-temp" id="H3Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H3RainIcon">
+                            <p id="H3Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card grey-card">
+                        <p class="upcoming-hour" id="H4">00:00</p>
+                        <img src="./icons/loading.svg" id="H4Icon">
+                        <p class="upcoming-temp" id="H4Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H4RainIcon">
+                            <p id="H4Rain">%</p>
+                        </section>
+                    </section>
+
+                    <section class="upcoming-list-card">
+                        <p class="upcoming-hour" id="H5">00:00</p>
+                        <img src="./icons/loading.svg" id="H5Icon">
+                        <p class="upcoming-temp" id="H5Temp">0</p>
+                        <section class="upcoming-list-card-rain">
+                            <img src="./icons/MiniRain.svg" alt="rain icon" id="H5RainIcon">
+                            <p id="H5Rain">%</p>
+                        </section>
+                    </section>
+
+                </section>
+            </section>
+            <section class="card mini-card" id="night-card">
+                <h2>night</h2>
+                <section class="mini-card-info">
+                    <img src="./icons/sunseticon.svg" alt="sunset">
+                    <p id="sunset">sunset 00:00</p>
+                </section>
+                <section class="mini-card-info">
+                    <img src="./icons/moonicon.svg" alt="moon" >
+                    <p id="moon">moon</p>
+                </section>
+            </section>
+        </div>
+        <div class="tomorrow">
+            <section class="title">
+                <img src="./icons/titlemark.svg" alt="chevron" class="title-mark">
+                <h1 id="tomorrow">Tomorrow</h1>
+            </section>
+            <section class="card mini-card" id="tomorrow-intro">
+                <h2 id="tomorrow-day">dayname</h2>
+                <section class="mini-card-info" id="rise">
+                    <img src="./icons/sunriseicon.svg" alt="sunrise">
+                    <p id="sunrise">sunrise 00:00</p>
+                </section>
+                <section class="mini-card-info">
+                    <img id="tomorrow-ico" src="./icons/loading.svg" alt="weather" width="22">
+                    <p id="tomorrow-weather">weather name</p>
+                </section>
+                <section class="mini-card-info">
+                    <img src="./icons/tempicon.svg" alt="temperature">
+                    <p id="tomorrow-temp">temp</p>
+                </section>
+            </section>
+            <section class="card tomorrow-card" id="tomorrow-card"> 
+                <section class="tomorrow-info morning">
+                    <h2>morning</h2>
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="morning-img">
+                        <h3 id="morning-temp">0°</h3>
+                    </section>
+                </section>
+                <section class="tomorrow-info afternoon">
+                    <h2>afternoon</h2>
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="afternoon-img">
+                        <h3 id="afternoon-temp">0°</h3>
+                    </section>
+                </section>
+                <section class="tomorrow-info night">
+                    <h2>night</h2>
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="night-img">
+                        <h3 id="night-temp">0°</h3>
+                    </section>
+                </section>
+            </section>
+        </div>
+        <div class="thisweek" id="thisweekdiv">
+            <section class="title">
+                <img src="./icons/titlemark.svg" alt="chevron" class="title-mark">
+                <h1 id="thisweek">This Week</h1>
+            </section>
+            <section class="card " id="week-card"> 
+                <section class="week-info" id="weekday1">
+                    <h2>wednesday</h2>
+                    <section class="day-info-weather mini-weather">
+                        <img src="./icons/loading.svg" alt="now" id="weekday1-img">
+                        <h2 id="weekday1-temp">0°</h2>
+                    </section>
+                    <h2 class="transparent" id="weekday1-detail">5%rain, 0km/h wind</h2>
+                </section>
+                <section class="week-info" id="weekday2">
+                    <h2>thursday</h2>
+                    <section class="day-info-weather mini-weather">
+                        <img src="./icons/loading.svg" alt="now" id="weekday2-img">
+                        <h2 id="weekday2-temp">0°</h2>
+                    </section>
+                    <h2 class="transparent" id="weekday2-detail">5%rain, 0km/h wind</h2>
+                </section>
+                <section class="week-info" id="weekday3">
+                    <h2>friday</h2>
+                    <section class="day-info-weather mini-weather">
+                        <img src="./icons/loading.svg" alt="now" id="weekday3-img">
+                        <h2 id="weekday3-temp">0°</h2>
+                    </section>
+                    <h2 class="transparent" id="weekday3-detail">5%rain, 0km/h wind</h2>
+                </section>
+                </section>
+            </section>
+        </div>
+        <div class="weekend" id="end">
+            <section class="title" id="end-title">
+                <img src="./icons/titlemark.svg" alt="chevron" class="title-mark">
+                <h1 id="weekend">Weekend</h1>
+            </section>
+            <section class="card day-card" id="saturday">
+                <h2>saturday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="sat-img">
+                        <h3 id="sat-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="sat-rain-ico">
+                        </section>
+                        <p id="sat-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="sat-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="sat-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card day-card" id="sunday">
+                <h2>sunday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="sun-img">
+                        <h3 id="sun-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="sun-rain-ico">
+                        </section>
+                        <p id="sun-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="sun-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="sun-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+        <div class="next" id="next">
+            <section class="title">
+                <img src="./icons/titlemark.svg" alt="chevron" class="title-mark">
+                <h1 id="week">Next week</h1>
+            </section>
+            <section class="card day-card" id="nextmonday">
+                <h2>monday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="1-img">
+                        <h3 id="1-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="1-rain-ico">
+                        </section>
+                        <p id="1-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="1-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="1-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card day-card">
+                <h2>tuesday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="2-img">
+                        <h3 id="2-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="2-rain-ico">
+                        </section>
+                        <p id="2-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="2-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="2-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card day-card">
+                <h2>wednesday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="3-img">
+                        <h3 id="3-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="3-rain-ico">
+                        </section>
+                        <p id="3-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="3-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="3-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card day-card">
+                <h2>thursday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="4-img">
+                        <h3 id="4-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="4-rain-ico">
+                        </section>
+                        <p id="4-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="4-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="4-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="card day-card">
+                <h2>friday</h2>
+                <section class="day-info">
+                    <section class="day-info-weather">
+                        <img src="./icons/loading.svg" alt="now" id="5-img">
+                        <h3 id="5-temp">0°</h3>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle rain-circle">
+                            <img src="./icons/rainiconbg.svg" alt="rain">
+                            <img src="./icons/rainicontop.svg" alt="rain" id="5-rain-ico">
+                        </section>
+                        <p id="5-rain">0%</p>
+                    </section>
+                    <section class="day-info-detail">
+                        <section class="day-info-detail-circle wind-circle">
+                            <img src="./icons/windiconbg.svg" alt="rain">
+                            <img src="./icons/windicontop.svg" alt="rain" id="5-wind-ico">
+                        </section>
+                        <section class="day-info-detail-text">
+                        <p id="5-wind">00</p>
+                        <span class="wind">km/h</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </div>
+        <p>Designed and written by Jeremie Roberrini</p>
+    <a href="mailto:contact@roberrini.com">Share your feedback</a>
+    </main>
+    
+
+    <script src="./app.js"></script>
+    <script src="./moon.js"></script>
+</body>
+</html>

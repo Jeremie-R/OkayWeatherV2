@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="12px" viewBox="0 0 6 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Oval</title>
+    <g id="episode-14---illustration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="okay-weather-light-copy" transform="translate(-181.000000, -843.000000)" stroke="#41A0FF" stroke-width="1.5">
+            <g id="Group-Copy-11" transform="translate(168.000000, 720.000000)">
+                <g id="rain" transform="translate(13.000000, 119.500000)">
+                    <path d="M3.011,5.729 L3.06883794,5.84525721 C4.01581048,7.7765127 5.25,10.3803904 5.25,11.7185131 C5.25,12.4257634 4.99227199,13.0684967 4.56778054,13.5328177 C4.16655051,13.9716948 3.61421405,14.25 3,14.25 C2.38578595,14.25 1.83344949,13.9716948 1.43221946,13.5328177 C1.00772801,13.0684967 0.75,12.4257634 0.75,11.7185131 C0.75,10.3346961 2.12759125,7.56922341 3.05608102,5.63691303 L3.011,5.729 Z" id="Oval"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
